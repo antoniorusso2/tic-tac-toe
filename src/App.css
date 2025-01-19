@@ -66,16 +66,18 @@ ul {
 
 .square {
   background: #fff;
-  border: 2px solid #030303;
+  /* border: 2px solid #030303;
   border-radius: 0.3rem;
-  border-top: none;
+  border-top: none; */
+  border: none;
 
   float: left;
   font-size: 54px;
   font-weight: 200;
   line-height: 34px;
   height: 80px;
-  margin: 1px;
+  /* margin-right: 3px;
+  margin-bottom: 3px; */
   padding: 0;
   text-align: center;
   width: 80px;
@@ -85,23 +87,36 @@ ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  background-color: #030303;
+  border: none;
 }
 
-.square:nth-child(1) {
-  border-left: none;
+.board button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
-.square:nth-child(3) {
+.board button:nth-child(3n) {
   border-right: none;
 }
 
-.row:nth-child(3) .square {
+.board button:nth-last-child(-n + 3) {
   border-bottom: none;
 }
 
-/* 
-.board-row:after {
-  clear: both;
-  content: '';
-  display: table;
-} */
+.square {
+  background: #fff;
+  border: none;
+  float: left;
+  font-size: 54px;
+  font-weight: 200;
+  line-height: 34px;
+  height: 100px;
+  padding: 0;
+  text-align: center;
+  width: 100px;
+}
