@@ -11,40 +11,15 @@
 
 body {
   font-family: sans-serif;
+  background-image: linear-gradient(135deg, #43cbff 10%, #9708cc 100%);
+  color: aliceblue;
 }
 
 h1 {
-  margin-top: 0;
-  font-size: 22px;
-}
-
-h2 {
-  margin-top: 0;
-  font-size: 20px;
-}
-
-h3 {
-  margin-top: 0;
-  font-size: 18px;
-}
-
-h4 {
-  margin-top: 0;
-  font-size: 16px;
-}
-
-h5 {
-  margin-top: 0;
-  font-size: 14px;
-}
-
-h6 {
-  margin-top: 0;
-  font-size: 12px;
-}
-
-code {
-  font-size: 1.2em;
+  font-size: 3.5rem;
+  text-rendering: optimizeLegibility;
+  font-style: italic;
+  font-weight: 400;
 }
 
 ul {
@@ -54,7 +29,7 @@ ul {
 .container {
   max-width: 1800px;
   margin: 0 auto;
-  padding: 1.2rem 0;
+  padding: 1.8rem 0;
 }
 
 .row {
@@ -62,6 +37,21 @@ ul {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0 1.8rem;
+}
+
+.status {
+  width: 100%;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: aliceblue;
+  background-color: #8ec5fc;
+  background-image: linear-gradient(135deg, #f761a1 10%, #8c1bab 100%);
+  line-height: 2.5rem;
+  padding: 0 1.8rem;
+  border-radius: 0.3rem;
+
+  font-weight: bold;
 }
 
 .square {
@@ -89,6 +79,8 @@ ul {
   grid-template-rows: repeat(3, 1fr);
   background-color: #030303;
   border: none;
+  border-radius: 0.8rem;
+  overflow: hidden;
 }
 
 .board button {

@@ -6,10 +6,14 @@ export default function Square({ value, index }) {
   //variabile che indica il valore di ogni quadrato
   // const [value, setValue] = useState(null)
 
-  const { squares, setSquares, xIsNext, setXIsNext } =
-    useContext(GlobalContext);
+  const { squares, setSquares, xIsNext, setXIsNext, calculateWinner } = useContext(GlobalContext);
 
   function handleClick(i) {
+    //se il quadrato è già stato cliccato o se il simbolo risulta vincente, non faccio nulla
+    if (squares[i] || calculateWinner(squares)) return;
+
+    console.log(calculateWinner(squares));
+
     //gestione players turn
     setXIsNext(!xIsNext);
 
