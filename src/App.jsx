@@ -1,14 +1,17 @@
-import { useState } from 'react'
-import './App.css'
-import Square from './components/Square'
-import GlobalContext from './globalContext'
+import { useState } from 'react';
+import './App.css';
+import Square from './components/Square';
+import GlobalContext from './globalContext';
 
 function Board() {
   //variabile che indica il valore di ogni quadrato per stabilire poi un vincitore
-  const [squares, setSquares] = useState(Array(9).fill(null))
+  const [xIsNext, setXIsNext] = useState(true);
+  const [squares, setSquares] = useState(Array(9).fill(null));
 
   return (
-    <GlobalContext.Provider value={{ squares, setSquares }}>
+    <GlobalContext.Provider
+      value={{ squares, setSquares, xIsNext, setXIsNext }}
+    >
       <div className="container">
         <div className="row">
           <div className="board">
@@ -19,7 +22,7 @@ function Board() {
         </div>
       </div>
     </GlobalContext.Provider>
-  )
+  );
 }
 
-export default Board
+export default Board;
