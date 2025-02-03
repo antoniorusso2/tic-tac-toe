@@ -19,6 +19,12 @@ function Board() {
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   }
 
+  //restart game
+  function restartGame() {
+    setSquares(Array(9).fill(null));
+    setXIsNext(true);
+  }
+
   return (
     <GlobalContext.Provider value={{ squares, setSquares, xIsNext, setXIsNext, calculateWinner }}>
       <div className="container">
@@ -26,7 +32,7 @@ function Board() {
           <h1 className="title">Tic Tac Toe</h1>
         </div>
       </div>
-      <div className="contianer">
+      <div className="container">
         <div className="row">
           <div className="status">{status}</div>
         </div>
@@ -37,6 +43,12 @@ function Board() {
             {squares.map((square, i) => (
               <Square key={i} index={i} value={square} />
             ))}
+          </div>
+          {/* reset btn */}
+          <div className="btn-wrap">
+            <button onClick={restartGame} className="restart btn-grad">
+              Restart
+            </button>
           </div>
         </div>
       </div>
