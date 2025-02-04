@@ -60,6 +60,11 @@ button {
   font-weight: bold;
 }
 
+.cross {
+  height: 70px;
+  width: 70px;
+}
+
 .square {
   background: #fff;
   /* border: 2px solid #030303;

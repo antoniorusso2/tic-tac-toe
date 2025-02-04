@@ -73,9 +73,11 @@ function calculateWinner(squares) {
 
   //scorro tutte le combinazioni per vedere se ci sono 3 simboli uguali
   for (let i = 0; i < lines.length; i++) {
+    // console.log(lines);
     //prendo le 3 posizioni
     const [a, b, c] = lines[i];
     //se ci sono 3 simboli uguali ritorno il simbolo
+    console.log(squares[a], squares[b], squares[c]);
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
     }

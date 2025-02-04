@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useContext } from 'react';
 import GlobalContext from '../globalContext';
+import X from './X';
+import O from './O';
 
 export default function Square({ value, index }) {
   //variabile che indica il valore di ogni quadrato
@@ -11,8 +13,6 @@ export default function Square({ value, index }) {
   function handleClick(i) {
     //se il quadrato è già stato cliccato o se il simbolo risulta vincente, non faccio nulla
     if (squares[i] || calculateWinner(squares)) return;
-
-    console.log(calculateWinner(squares));
 
     //gestione players turn
     setXIsNext(!xIsNext);
@@ -30,15 +30,14 @@ export default function Square({ value, index }) {
     console.log(squares, nextSquares);
 
     //imposta il valore del quadrato cliccato
-    // nextSquares[i] = 'X';
 
     //aggiorna lo stato del componente
-    setSquares(nextSquares);
+    setSquares([...nextSquares]);
   }
 
   return (
     <button onClick={() => handleClick(index)} className="square">
-      {value}
+      {value === 'X' ? <X /> : value === 'O' ? <O /> : null}
     </button>
   );
 }
